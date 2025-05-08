@@ -1,15 +1,6 @@
 import streamlit as st
 import matplotlib.pyplot as plt
-import numpy as np
-import pandas as pd
-from PIL import Image
-import base64
 import time
-import io
-import matplotlib.animation as animation
-from IPython.display import HTML
-import requests
-from io import BytesIO
 
 # Import the calculation functions from the original file
 def calculate_effective_ammo_with_bastion(base_ammo):
