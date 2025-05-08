@@ -683,7 +683,6 @@ def main():
         st.markdown("---")
         
         st.warning("Note: Click the Stop Animation button to pause the simulation and keep the last frame visible.")
-        st.info("The simulation is time-based, showing exact per-second consumption.")
         
         # Create a better layout for the buttons
         col1, col2 = st.columns([3, 1])  # Use a wider column for text/info
