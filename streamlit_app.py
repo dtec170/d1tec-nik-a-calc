@@ -736,7 +736,6 @@ def main():
     st.markdown("---")
     st.markdown("### About")
     st.markdown("""
-    This calculator helps NIKKE players optimize their weapon loadout by calculating uptime percentages and visualizing ammo consumption.
     
     The calculator takes into account:
     - Base weapon stats (ammo, fire rate, reload time)
