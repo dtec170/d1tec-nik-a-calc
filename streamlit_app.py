@@ -200,10 +200,26 @@ def simulate_ammo_consumption(total_ammo, fire_rate, reload_time, is_mg=False,
 def add_custom_css():
     st.markdown("""
     <style>
+    /* Base app styles */
     .stApp {
         background: linear-gradient(to bottom, #f0f2f5, #e8ecf1, #dfe6e9);
-        color: #2d3436;
+        color: #2d3436 !important;
     }
+    
+    /* Ensure all text has proper color */
+    .stApp p, .stApp div, .stApp label, .stApp span, 
+    .stApp li, .stMarkdown, .stText, [data-testid="stMarkdownContainer"] {
+        color: #2d3436 !important;
+    }
+    
+    /* Headings styling */
+    h1, h2, h3, h4, h5, h6,
+    .stApp h1, .stApp h2, .stApp h3, .stApp h4, .stApp h5, .stApp h6 {
+        color: #2c3e50 !important;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    /* Widget containers */
     .css-1lcbmhc, .css-1wrcr25, .css-ocqkz7 {
         background-color: rgba(255, 255, 255, 0.8);
         border-radius: 10px;
@@ -211,6 +227,8 @@ def add_custom_css():
         margin-bottom: 20px;
         box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     }
+    
+    /* Button styling */
     .stButton>button {
         background-color: #3498db;
         color: white;
@@ -230,22 +248,58 @@ def add_custom_css():
     .stop-button > button:hover {
         background-color: #c0392b !important;
     }
-    h1, h2, h3 {
-        color: #2c3e50;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
+    
+    /* Results container */
     .results-container {
         background-color: rgba(255, 255, 255, 0.8);
         padding: 15px;
         border-radius: 10px;
         border-left: 4px solid #3498db;
-        color: #2d3436;
+        color: #2d3436 !important;
     }
+    
+    /* Links */
     a {
         color: #2980b9;
     }
+    
+    /* Data tables */
     .stDataFrame {
-        color: #2d3436;
+        color: #2d3436 !important;
+    }
+    
+    /* Input widgets */
+    .stNumberInput label, .stSlider label, .stRadio label, .stCheckbox label {
+        color: #2d3436 !important;
+    }
+    
+    /* Text areas */
+    textarea, .stTextArea label, .stTextArea textarea {
+        color: #2d3436 !important;
+    }
+    
+    /* Mobile specific adjustments */
+    @media (max-width: 768px) {
+        .stApp, body, p, div, span, label, li, textarea, .widget-label, .stTextInput>label {
+            color: #2d3436 !important;
+        }
+        
+        [data-testid="stMarkdownContainer"] p, 
+        [data-testid="stMarkdownContainer"] span, 
+        [data-testid="stMarkdownContainer"] div,
+        [data-testid="stMarkdownContainer"] li {
+            color: #2d3436 !important;
+        }
+        
+        /* Force dark text on all elements */
+        * {
+            color: #2d3436 !important;
+        }
+        
+        /* Exception for buttons which should have white text */
+        .stButton>button {
+            color: white !important;
+        }
     }
     </style>
     """, unsafe_allow_html=True)
