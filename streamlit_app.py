@@ -419,7 +419,6 @@ def create_animation(total_ammo, fire_rate, reload_time, is_mg=False,
                             
                             if bastion_refunds > 0:
                                 current_ammo = min(current_ammo + bastion_refunds, max_ammo)
-                                status_placeholder.markdown(f"### 🔄 BASTION CUBE +{bastion_refunds} AMMO")
             
             # Update time and ammo points for the chart (manage length for performance)
             time_points.append(simulation_time)
@@ -516,11 +515,14 @@ def main():
             </div>
             """, unsafe_allow_html=True)
             
+            total_ammo_with_bonus = total_ammo * (1 + ammo_bonus / 100) if ammo_bonus > 0 else total_ammo
+
+
             # Display breakdown below results
             st.subheader("Calculation Breakdown")
             breakdown = f""
             if ammo_bonus > 0:
-                breakdown += f"- Base ammo: {total_ammo} + {ammo_bonus}% bonus = {results['base_ammo']} ammo\n"
+                breakdown += f"- Base ammo: {total_ammo} + {ammo_bonus}% bonus = {total_ammo_with_bonus}\n"
             else:
                 breakdown += f"- Base ammo: {total_ammo}\n"
                 
