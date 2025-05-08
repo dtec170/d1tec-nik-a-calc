@@ -1,8 +1,6 @@
-streamlit==1.24.0
-matplotlib==3.7.1
-numpy==1.24.3
-pandas==2.0.2
-Pillow==9.5.0
+import streamlit as st
+import matplotlib.pyplot as plt
+import time
 
 # Import the calculation functions from the original file
 def calculate_effective_ammo_with_bastion(base_ammo):
