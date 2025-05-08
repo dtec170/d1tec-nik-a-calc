@@ -740,10 +740,10 @@ def main():
     
     The calculator takes into account:
     - Base weapon stats (ammo, fire rate, reload time)
-    - Equipment (Bastion Cube or Resilience)
+    - Cubes (Bastion Cube or Resilience)
     - Machine Gun wind-up mechanics
     - Cover downtime during reloads
-    - Ammo bonuses from skills or talents
+    - Ammo bonuses from skills
                 
     Author: David
     """)
